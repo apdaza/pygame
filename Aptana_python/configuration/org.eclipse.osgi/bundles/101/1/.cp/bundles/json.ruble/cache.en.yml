@@ -1,0 +1,33 @@
+--- !ruby/object:Ruble::Bundle
+displayName: ! "JSON"
+path: bundle.rb
+children:
+- !ruby/object:Ruble::Menu
+  displayName: ! "JSON"
+  path: bundle.rb
+  scope: source.json
+  children:
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Reformat Document / Selection"
+    path: bundle.rb
+    commandName: ! "Reformat Document / Selection"
+- !ruby/object:Ruble::Command
+  displayName: ! "Reformat Document / Selection"
+  path: commands/reformat_document.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+H
+  scope: source.json
+  outputType: replace_selection
+visible: true
+author: Christopher Williams
+copyright: Copyright 2010 Aptana Inc. Distributed under the MIT license.
+repository: git://github.com/aptana/json.ruble.git
+description: JSON bundle ported from James Edward Gray II's TextMate bundle. Syntax
+  highlight for <a href="http://json.org/">JavaScript Object Notation</a> files, often
+  used as a lightweight serialization format.

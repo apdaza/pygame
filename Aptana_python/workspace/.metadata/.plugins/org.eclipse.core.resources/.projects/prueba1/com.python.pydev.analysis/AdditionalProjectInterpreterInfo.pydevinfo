@@ -1,0 +1,21 @@
+-- VERSION_3
+-- START DISKCACHE
+/home/apdaza/Escritorio/pygame/Aptana_python/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/prueba1/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+bola|0|/home/apdaza/Escritorio/pygame/Aptana_python/workspace/prueba1/base/bola.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=bola
+-- END DICTIONARY
+-- START TREE 1
+5
+bal|2|ballrect!11@ball!11@
+bla|1|black!11@
+scr|1|screen!11@
+siz|1|size!11@
+spe|1|speed!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

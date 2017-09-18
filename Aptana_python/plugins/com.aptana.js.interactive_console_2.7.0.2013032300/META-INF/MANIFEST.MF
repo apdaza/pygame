@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Require-Bundle: org.junit;bundle-version="[3.8.0,3.9.9]";resolution:=o
+ ptional,org.eclipse.ui,org.eclipse.core.runtime,com.aptana.interactiv
+ e_console,com.aptana.shared_core,org.eclipse.jface.text,org.eclipse.d
+ ebug.core,org.eclipse.debug.ui,org.eclipse.ui.console,org.mozilla.rhi
+ no,org.python.pydev.core,org.python.pydev
+Bundle-Vendor: Appcelerator
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: js_interactive_console.jar
+Bundle-Version: 2.7.0.2013032300
+Bundle-Name: JS Interactive Console
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.aptana.js.interactive_console.JsInteractiveConso
+ lePlugin
+Bundle-SymbolicName: com.aptana.js.interactive_console;singleton:=true
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: 6mDW8kS/T9pK7w1by/wcxy21Z20=
+
+Name: plugin.xml
+SHA1-Digest: nIc2IhgHDV4h4/1eMZEeEwJkaIo=
+
+Name: js_interactive_console.jar
+SHA1-Digest: rPtuKxN2m8j0dstmdWKsiLuIw3U=
+
+Name: icons/js_console_16x16.png
+SHA1-Digest: rCwGWMnzFfzhKgdhGZmnFAP/qPo=
+

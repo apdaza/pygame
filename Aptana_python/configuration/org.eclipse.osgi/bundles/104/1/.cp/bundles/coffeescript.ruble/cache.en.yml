@@ -1,0 +1,507 @@
+--- !ruby/object:Ruble::Bundle
+displayName: ! "CoffeeScript"
+path: bundle.rb
+children:
+- !ruby/object:Ruble::Menu
+  displayName: ! "CoffeeScript"
+  path: bundle.rb
+  children:
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Run"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Run"
+      path: bundle.rb
+      commandName: ! "Run"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Compile and Display JS"
+      path: bundle.rb
+      commandName: ! "Compile and Display JS"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Run selected text"
+      path: bundle.rb
+      commandName: ! "Run selected text"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Control"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "If"
+      path: bundle.rb
+      commandName: ! "If"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "If .. Else"
+      path: bundle.rb
+      commandName: ! "If .. Else"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Else if"
+      path: bundle.rb
+      commandName: ! "Else if"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Ternary If"
+      path: bundle.rb
+      commandName: ! "Ternary If"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Unless"
+      path: bundle.rb
+      commandName: ! "Unless"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Constructs"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "New Function"
+      path: bundle.rb
+      commandName: ! "New Function"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Function"
+      path: bundle.rb
+      commandName: ! "Function"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Function (bound)"
+      path: bundle.rb
+      commandName: ! "Function (bound)"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Array Comprehension"
+      path: bundle.rb
+      commandName: ! "Array Comprehension"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Object comprehension"
+      path: bundle.rb
+      commandName: ! "Object comprehension"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Range comprehension (exclusive)"
+      path: bundle.rb
+      commandName: ! "Range comprehension (exclusive)"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Range comprehension (inclusive)"
+      path: bundle.rb
+      commandName: ! "Range comprehension (inclusive)"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Switch"
+      path: bundle.rb
+      commandName: ! "Switch"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Class"
+      path: bundle.rb
+      commandName: ! "Class"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Try .. Catch"
+      path: bundle.rb
+      commandName: ! "Try .. Catch"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Other"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Insert Heredoc \"\"\" quotes"
+      path: bundle.rb
+      commandName: ! "Insert Heredoc \"\"\" quotes"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Insert Heredoc ''' quotes"
+      path: bundle.rb
+      commandName: ! "Insert Heredoc ''' quotes"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Insert Heredoc \"\"\" comment"
+      path: bundle.rb
+      commandName: ! "Insert Heredoc \"\"\" comment"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Align Assignments"
+      path: bundle.rb
+      commandName: ! "Align Assignments"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Raw javascript"
+      path: bundle.rb
+      commandName: ! "Raw javascript"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "require"
+      path: bundle.rb
+      commandName: ! "require"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Interpolated Code"
+      path: bundle.rb
+      commandName: ! "Interpolated Code"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "log"
+      path: bundle.rb
+      commandName: ! "log"
+- !ruby/object:Ruble::SmartTypingPair
+  scope: source.coffee
+  path: bundle.rb
+  pairs:
+  - ! '"'
+  - ! '"'
+  - (
+  - )
+  - ! '{'
+  - ! '}'
+  - ! '['
+  - ! ']'
+  - ! ''''
+  - ! ''''
+  - ! '`'
+  - ! '`'
+  displayName: smart_typing_pairs-
+- !ruby/object:Ruble::Command
+  displayName: ! "Insert Heredoc ''' quotes"
+  path: commands/insert_heredoc_single_quotes.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  - line
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+'
+  scope: source.coffee
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "Insert Heredoc \"\"\" quotes"
+  path: commands/insert_heredoc_double_quotes.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  - line
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+"
+  scope: source.coffee
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "Run"
+  path: commands/run.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+R
+  scope: source.coffee
+  outputType: show_as_html
+- !ruby/object:Ruble::Command
+  displayName: ! "Align Assignments"
+  path: commands/align_assignments.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M3+M1+]
+  scope: source.coffee
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "New Function"
+  path: commands/new_function.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - word
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M2+ENTER
+  scope: source.coffee
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "Run selected text"
+  path: commands/run_selected_text.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+M2+R
+  scope: source.coffee
+  outputType: show_as_tooltip
+- !ruby/object:Ruble::Command
+  displayName: ! "Compile and Display JS"
+  path: commands/compile_and_display_js.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - document
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+B
+  scope: source.coffee
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! "Insert Heredoc \"\"\" comment"
+  path: commands/insert_heredoc_comment.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  - line
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M4+#
+  scope: source.coffee
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Interpolated Code"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - ! '#'
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - ! '#'
+  scope: (string.quoted.double.coffee) - string source, (string.quoted.double.heredoc.coffee)
+    - string source
+  expansion: ! '#{${1:$TM_SELECTED_TEXT}}'
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Array Comprehension"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - fora
+  scope: source.coffee
+  expansion: ! "for ${1:name} in ${2:array}\n  ${0:# body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Function (bound)"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - bfun
+  scope: source.coffee
+  expansion: ! "${1:(${2:args}) }=>\n  ${0:# body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Class"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - cla
+  scope: source.coffee
+  expansion: ! "class ${1:ClassName}${2: extends ${3:Ancestor}}\n\n  ${4:constructor:
+    (${5:args}) ->\n    ${6:# body...}}\n  $7"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Else if"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - elif
+  scope: source.coffee
+  expansion: ! "else if ${1:condition}\n  ${0:# body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Function"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - fun
+  scope: source.coffee
+  expansion: ! "${1:name} = (${2:args}) ->\n  ${0:# body...}\n\n"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "If .. Else"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - ife
+  scope: source.coffee
+  expansion: ! "if ${1:condition}\n  ${2:# body...}\nelse\n  ${3:# body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "If"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - if
+  scope: source.coffee
+  expansion: ! "if ${1:condition}\n  ${0:# body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "log"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - log
+  scope: source.coffee
+  expansion: console.log $0
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Object comprehension"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - foro
+  scope: source.coffee
+  expansion: ! "for ${1:key}, ${2:value} of ${3:Object}\n  ${0:# body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Range comprehension (exclusive)"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - forrex
+  scope: source.coffee
+  expansion: ! "for ${1:name} in [${2:start}...${3:finish}]${4: by ${5:step}}\n  ${0:#
+    body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Range comprehension (inclusive)"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - forr
+  scope: source.coffee
+  expansion: ! "for ${1:name} in [${2:start}..${3:finish}]${4: by ${5:step}}\n  ${0:#
+    body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Raw javascript"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M4+J
+  scope: source.coffee
+  expansion: \`${1:`pbpaste`}\`
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Switch"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - swi
+  scope: source.coffee
+  expansion: ! "switch ${1:object}\n  when ${2:value}\n    ${0:# body...}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Ternary If"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - ifte
+  scope: source.coffee
+  expansion: if ${1:condition} then ${2:value} else ${3:other}
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Try .. Catch"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - try
+  scope: source.coffee
+  expansion: ! "try\n  $1\ncatch ${2:error}\n  $3"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Unless"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - unl
+  scope: source.coffee
+  expansion: ${1:action} unless ${2:condition}
+- !ruby/object:Ruble::Env
+  scope: source.coffee
+  path: bundle.rb
+  displayName: environment-
+visible: true
+author: Jeremy Ashkenas, Christopher Williams
+customProperties:
+  contact_email_rot_13: wnfuxranf@tznvy.pbz
+  fileTypes:
+  - ! '*.coffee'
+  - Cakefile
+  fileTypeRegistry:
+    ! '*.coffee': source.coffee
+    Cakefile: source.coffee
+description: Coffeescript ruble ported from official Coffeescript Textmate bundle.
+foldingStartMarkers:
+  source.coffee: !regexp /.*(->|=>)\s*$|.*[\[{]\s*$/
+foldingStopMarkers:
+  source.coffee: !regexp /^\s*$|^\s*[}\]]\s*$/
+increaseIndentMarkers:
+  source.coffee: !regexp "/\n    ^\\s*\n    (.*class\n    |[a-zA-Z\\$_](\\w|\\$|:|\\.)*\\s*(?=\\:(\\s*\\(.*\\))?\\s*((=|-)>\\s*$))
+    # function that is not one line\n    |[a-zA-Z\\$_](\\w|\\$|\\.)*\\s*(?=(?!\\::)\\:(?!(\\s*\\(.*\\))?\\s*((=|-)>))):\\s*((if|while)(?!.*?then)|for|$)
+    # assignment using multiline if,while,for\n    |(if|while)(?!.*?then)|for\n    |.*[-=]>$\n
+    \   |.*[\\{\\[]$)/x"
+decreaseIndentMarkers:
+  source.coffee: !regexp /^\s*(\}|\]|else|catch|finally)$/

@@ -1,0 +1,463 @@
+--- !ruby/object:Ruble::Bundle
+displayName: ! "Text"
+path: bundle.rb
+children:
+- !ruby/object:Ruble::Menu
+  displayName: ! "Text"
+  path: bundle.rb
+  children:
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Font"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Bigger"
+      path: bundle.rb
+      commandName: ! "Bigger"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Smaller"
+      path: bundle.rb
+      commandName: ! "Smaller"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Converting / Stripping"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Convert Character / Selection to Hex"
+      path: bundle.rb
+      commandName: ! "Convert Character / Selection to Hex"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Remove Trailing Spaces in Document / Selection"
+      path: bundle.rb
+      commandName: ! "Remove Trailing Spaces in Document / Selection"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Remove Unprintable Characters in Document / Selection"
+      path: bundle.rb
+      commandName: ! "Remove Unprintable Characters in Document / Selection"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Transliterate Word / Selection to ASCII"
+      path: bundle.rb
+      commandName: ! "Transliterate Word / Selection to ASCII"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Encryption"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "AES Encrypt Document / Selection With Password..."
+      path: bundle.rb
+      commandName: ! "AES Encrypt Document / Selection With Password..."
+    - !ruby/object:Ruble::Menu
+      displayName: ! "AES Decrypt Document / Selection With Password..."
+      path: bundle.rb
+      commandName: ! "AES Decrypt Document / Selection With Password..."
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Filtering"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Distill Document / Selection"
+      path: bundle.rb
+      commandName: ! "Distill Document / Selection"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Copy Matching Lines into New Document"
+      path: bundle.rb
+      commandName: ! "Copy Matching Lines into New Document"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Copy Non-Matching Lines into New Document"
+      path: bundle.rb
+      commandName: ! "Copy Non-Matching Lines into New Document"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Sorting"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Sort Lines in Document / Selection"
+      path: bundle.rb
+      commandName: ! "Sort Lines in Document / Selection"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Sort Lines & Remove Duplicates"
+      path: bundle.rb
+      commandName: ! "Sort Lines & Remove Duplicates"
+    - !ruby/object:Ruble::Menu
+      displayName: ! '-'
+      path: bundle.rb
+      commandName: ! '-'
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Randomize Lines in Document / Selection"
+      path: bundle.rb
+      commandName: ! "Randomize Lines in Document / Selection"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Delete to Beginning of Line"
+    path: bundle.rb
+    commandName: ! "Delete to Beginning of Line"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Duplicate Line / Selection"
+    path: bundle.rb
+    commandName: ! "Duplicate Line / Selection"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Join Lines"
+    path: bundle.rb
+    commandName: ! "Join Lines"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Execute Selection/Line Inserting Results"
+    path: bundle.rb
+    commandName: ! "Execute Selection/Line Inserting Results"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Add Line Numbers to Document / Selection"
+    path: bundle.rb
+    commandName: ! "Add Line Numbers to Document / Selection"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Statistics for Document / Selection (Word Count)"
+    path: bundle.rb
+    commandName: ! "Statistics for Document / Selection (Word Count)"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Copyright Notice"
+    path: bundle.rb
+    commandName: ! "Copyright Notice"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Current Date - YYYY-MM-DD"
+    path: bundle.rb
+    commandName: ! "Current Date - YYYY-MM-DD"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Lorem ipsum"
+    path: bundle.rb
+    commandName: ! "Lorem ipsum"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Speak Document / Selection"
+    path: bundle.rb
+    commandName: ! "Speak Document / Selection"
+- !ruby/object:Ruble::SmartTypingPair
+  scope: ''
+  path: bundle.rb
+  pairs:
+  - ! '"'
+  - ! '"'
+  - (
+  - )
+  - ! '{'
+  - ! '}'
+  - ! '['
+  - ! ']'
+  displayName: smart_typing_pairs-
+- !ruby/object:Ruble::Command
+  displayName: ! "Sort Lines & Remove Duplicates"
+  path: commands/sort_uniq.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Smaller"
+  path: commands/font_decrease.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: discard
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+-
+- !ruby/object:Ruble::Command
+  displayName: ! "Statistics for Document / Selection (Word Count)"
+  path: commands/word_count.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: show_as_tooltip
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+N
+- !ruby/object:Ruble::Command
+  displayName: ! "Transliterate Word / Selection to ASCII"
+  path: commands/convert_to_ascii.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - word
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Execute Selection/Line Inserting Results"
+  path: commands/execute_and_insert.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - line
+  outputType: insert_as_text
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CTRL+R
+- !ruby/object:Ruble::Command
+  displayName: ! "Add Line Numbers to Document / Selection"
+  path: commands/enumerate_lines.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Duplicate Line / Selection"
+  path: commands/duplicate_line.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - none
+  outputType: insert_as_text
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+D
+- !ruby/object:Ruble::Command
+  displayName: ! "Delete to Beginning of Line"
+  path: commands/delete_to_beginning_of_line.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: discard
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - COMMAND+BACKSPACE
+- !ruby/object:Ruble::Command
+  displayName: ! "AES Decrypt Document / Selection With Password..."
+  path: commands/decrypt_selection.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+SHIFT+COMMAND+E
+- !ruby/object:Ruble::Command
+  displayName: ! "Remove Unprintable Characters in Document / Selection"
+  path: commands/strip_non-printables.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Copy Non-Matching Lines into New Document"
+  path: commands/copy_non-matching_lines_into_new_document.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - document
+  outputType: create_new_document
+- !ruby/object:Ruble::Command
+  displayName: ! "Move to EOL and Insert \".\""
+  path: commands/move_to_eol_and_insert_period.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - line
+  outputType: replace_selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+ENTER
+  scope: text
+- !ruby/object:Ruble::Command
+  displayName: ! "Convert Character / Selection to Hex"
+  path: commands/convert_to_hex.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - right_character
+  outputType: replace_selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+X
+- !ruby/object:Ruble::Command
+  displayName: ! "Remove Trailing Spaces in Document / Selection"
+  path: commands/strip_trailing_spaces.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Distill Document / Selection"
+  path: commands/distill_document_selection.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - document
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Sort Lines in Document / Selection"
+  path: commands/sort.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Move to EOL and Insert \".\" + LF"
+  path: commands/move_to_eol_and_insert_period_and_lf.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - line
+  outputType: replace_selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - SHIFT+COMMAND+ENTER
+  scope: text
+- !ruby/object:Ruble::Command
+  displayName: ! "Randomize Lines in Document / Selection"
+  path: commands/randomize_lines_in_document_selection.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Speak Document / Selection"
+  path: commands/speak_document_selection.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! "Join Lines"
+  path: commands/join_lines.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: discard
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+J
+- !ruby/object:Ruble::Command
+  displayName: ! "Bigger"
+  path: commands/font_increase.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: discard
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+M2+=
+- !ruby/object:Ruble::Command
+  displayName: ! "Copy Matching Lines into New Document"
+  path: commands/copy_matching_lines_into_new_document.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - document
+  outputType: create_new_document
+- !ruby/object:Ruble::Command
+  displayName: ! "AES Encrypt Document / Selection With Password..."
+  path: commands/encrypt_selection.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+SHIFT+COMMAND+E
+- !ruby/object:Ruble::Command
+  displayName: ! "Copyright Notice"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: insert_as_snippet
+  customProperties:
+    prefix_values:
+    - c)
+- !ruby/object:Ruble::Command
+  displayName: ! "Current Date - YYYY-MM-DD"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: insert_as_snippet
+  customProperties:
+    prefix_values:
+    - isoD
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Lorem ipsum"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  customProperties:
+    prefix_values:
+    - lorem
+  expansion: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+visible: true
+author: Christopher Williams
+copyright: Copyright 2010 Aptana Inc. Distributed under the MIT license.
+description: A port of the TextMate bundle. The text bundle has a lot of support for
+  plain text and is a requisite for working with text.
+repository: git://github.com/aptana/text.ruble.git

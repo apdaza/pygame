@@ -1,0 +1,460 @@
+--- !ruby/object:Ruble::Bundle
+displayName: ! "Bundle Development"
+path: bundle.rb
+children:
+- !ruby/object:Ruble::Menu
+  displayName: ! "Bundle Development"
+  path: bundle.rb
+  children:
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Show Scope"
+    path: bundle.rb
+    commandName: ! "Show Scope"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Copy Scope"
+    path: bundle.rb
+    commandName: ! "Copy Scope"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Show Scope and Matching Theme Rule"
+    path: bundle.rb
+    commandName: ! "Show Scope and Matching Theme Rule"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Show ENV"
+    path: bundle.rb
+    commandName: ! "Show ENV"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Install Bundle"
+    path: bundle.rb
+    commandName: ! "Install Bundle"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Update User Bundles"
+    path: bundle.rb
+    commandName: ! "Update User Bundles"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Flush Bundle Caches"
+    path: bundle.rb
+    commandName: ! "Flush Bundle Caches"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Show Command Bindings"
+    path: bundle.rb
+    commandName: ! "Show Command Bindings"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Show Active Commands in Scope"
+    path: bundle.rb
+    commandName: ! "Show Active Commands in Scope"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Show Active Snippets in Scope"
+    path: bundle.rb
+    commandName: ! "Show Active Snippets in Scope"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Insert Bundle Section"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Bundle.rb"
+      path: bundle.rb
+      commandName: ! "Bundle.rb"
+    - !ruby/object:Ruble::Menu
+      displayName: ! '-'
+      path: bundle.rb
+      commandName: ! '-'
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Menu Command"
+      path: bundle.rb
+      commandName: ! "Menu Command"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Menu Separator"
+      path: bundle.rb
+      commandName: ! "Menu Separator"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Menu Block"
+      path: bundle.rb
+      commandName: ! "Menu Block"
+    - !ruby/object:Ruble::Menu
+      displayName: ! '-'
+      path: bundle.rb
+      commandName: ! '-'
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Command"
+      path: bundle.rb
+      commandName: ! "Command"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Snippet"
+      path: bundle.rb
+      commandName: ! "Snippet"
+    - !ruby/object:Ruble::Menu
+      displayName: ! '-'
+      path: bundle.rb
+      commandName: ! '-'
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Content Assist Block"
+      path: bundle.rb
+      commandName: ! "Content Assist Block"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "With Defaults Block"
+      path: bundle.rb
+      commandName: ! "With Defaults Block"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Environment"
+      path: bundle.rb
+      commandName: ! "Environment"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Smart Typing Pairs Definition"
+      path: bundle.rb
+      commandName: ! "Smart Typing Pairs Definition"
+    - !ruby/object:Ruble::Menu
+      displayName: ! '-'
+      path: bundle.rb
+      commandName: ! '-'
+    - !ruby/object:Ruble::Menu
+      displayName: ! "File Template"
+      path: bundle.rb
+      commandName: ! "File Template"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Project Template"
+      path: bundle.rb
+      commandName: ! "Project Template"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Validate Snippets"
+    path: bundle.rb
+    commandName: ! "Validate Snippets"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Convert TextMate Bundle"
+    path: bundle.rb
+    commandName: ! "Convert TextMate Bundle"
+- !ruby/object:Ruble::Command
+  displayName: ! "Show Active Commands in Scope"
+  path: commands/active_scope_commands.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: create_new_document
+  scope: all
+- !ruby/object:Ruble::Command
+  displayName: ! "Install Bundle"
+  path: commands/install_bundle.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: none
+- !ruby/object:Ruble::Command
+  displayName: ! "Flush Bundle Caches"
+  path: commands/flush_cache.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: show_as_tooltip
+- !ruby/object:Ruble::Command
+  displayName: ! "Copy Scope"
+  path: commands/copy_scope.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: copy_to_clipboard
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+SHIFT+COMMAND+C
+- !ruby/object:Ruble::Command
+  displayName: ! "Show ENV"
+  path: commands/env.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: show_as_tooltip
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+SHIFT+E
+- !ruby/object:Ruble::Command
+  displayName: ! "Convert TextMate Bundle"
+  path: commands/convert_bundle.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: show_as_tooltip
+- !ruby/object:Ruble::Command
+  displayName: ! "Show Scope and Matching Theme Rule"
+  path: commands/show_theme.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: show_as_tooltip
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+M3+P
+- !ruby/object:Ruble::Command
+  displayName: ! "Validate Snippets"
+  path: commands/validate_snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: create_new_document
+- !ruby/object:Ruble::Command
+  displayName: ! "Show Scope"
+  path: commands/show_scope.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: show_as_tooltip
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+SHIFT+P
+- !ruby/object:Ruble::Command
+  displayName: ! "Show Active Snippets in Scope"
+  path: commands/active_scope_snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: create_new_document
+  scope: all
+- !ruby/object:Ruble::Command
+  displayName: ! "Show Command Bindings"
+  path: commands/command_bindings.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: create_new_document
+  scope: all
+- !ruby/object:Ruble::Command
+  displayName: ! "Update User Bundles"
+  path: commands/update.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! "Bundle.rb"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: insert_as_snippet
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - bu
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Snippet"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - sn
+  expansion: ! "snippet '${1:name}' do |s|\n  s.trigger = '${2:trigger}'\n  s.scope
+    = '${3:source.ruby}'\n  s.expansion = \"${4:example}\"\nend"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Menu Command"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - m.
+  expansion: ! 'm.command ''${1:command_or_snippet_name}''
+
+    m.$0'
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Menu Separator"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - m.
+  expansion: ! 'm.separator
+
+    m.$0'
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Menu Block"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - m.
+  expansion: ! "m.menu '${1:submenu}' do |m|\n  m.$0\nend"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Command"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - co
+  expansion: ! "require 'ruble'\n\ncommand '${1:name}' do |cmd|\n  cmd.input = :${2:none/document/selection/word/right_character/left_character/line/clipboard/selected_lines}\n
+    \ cmd.output = :${3:discard/show_as_tooltip/replace_selection/replace_line/replace_word/show_as_html/insert_as_text/insert_as_snippet/create_new_document}\n
+    \ cmd.key_binding = '${4:CONTROL+SHIFT+E}'\n  cmd.scope = '${5:source.ruby}'\n
+    \ cmd.invoke do |context|\n    # Write your ruby code here. If there's a non-nil
+    return value for the block that will be used as output/result value.\n    # Otherwise
+    we'll take what was piped to STDOUT\n    nil\n  end\nend"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Content Assist Block"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - ca
+  expansion: ! "require 'ruble'\n\ncontent_assist '${1:name}' do |ca|\n  ca.scope
+    = '${2:source.ruby}'\n  ca.invoke do |context|\n    # Write your ruby code here.
+    If there's a non-nil return value for the block that will be used as output/result
+    value.\n    # Otherwise we'll take what was piped to STDOUT\n    \n    # Content
+    Assist is a little odd, it assumes the return value is a string that can be eval'd
+    to an \n    # Array of strings or hashes that are the list of completion proposals.\n
+    \   [${3:'example', 'values'}].inspect\n  end\nend"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "With Defaults Block"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - wi
+  expansion: ! "with_defaults :${1:scope} => '${2:source.ruby}' do\n  $0\nend"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Environment"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - env
+  expansion: ! "env '${1:source.ruby}' do |e|\n  e['${2:TM_COMMENT_START}'] = '${3:#
+    }'\nend"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Smart Typing Pairs Definition"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - stp
+  expansion: smart_typing_pairs['${1:source.ruby}'] = ['${2:"}', '$2']
+- !ruby/object:Ruble::Snippet
+  displayName: ! "File Template"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - ft
+  expansion: ! "template '${1:name}' do |t|\n  t.filetype = \"*.${2:txt}\"\n  t.invoke
+    do |context|\n    raw_contents = IO.read(\"#{ENV['TM_BUNDLE_PATH']}/templates/${3:template.txt}\")\n
+    \   raw_contents.gsub(/\\${([^}]*)}/) {|match| ENV[match[2..-2]] }\n  end\nend"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Project Template"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.ruby
+  customProperties:
+    prefix_values:
+    - pt
+  expansion: ! "project_template '${1:name}' do |t|\n  t.type = :${2:name}\n  t.location
+    = '${3:relative_path_and_filename.zip}'\n  t.description = '${4:description}'\n
+    \ t.replace_parameters = false\nend"
+- !ruby/object:Ruble::ProjectTemplate
+  displayName: ! "Ruble Template"
+  id: ! "Ruble Template"
+  path: templates/template.rb
+  type: RUBY
+  location: templates/ruble_template.zip
+  description: ! "A simple Ruble sample"
+  customProperties:
+    replace_parameters: true
+  tags:
+  - Ruby
+visible: true
+author: Christopher Williams, Andrew Shebanow
+copyright: (C) Copyright 2011 Appcelerator Inc. Distributed under the MIT license.
+description: ! "A bundle to help develop your own bundles, grab 3rd-party bundles, convert TextMate bundles, and see scope/theme information."
+repository: git://github.com/aptana/bundle-dev.ruble.git

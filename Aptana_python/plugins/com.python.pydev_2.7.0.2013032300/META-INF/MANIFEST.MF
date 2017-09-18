@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jf
+ ace.text,org.python.pydev;bundle-version="2.7.0.2013032300",org.pytho
+ n.pydev.core,org.junit;bundle-version="[3.8.0,3.9.9]";resolution:=opt
+ ional,org.python.pydev.ast,org.python.pydev.parser,org.eclipse.ui.edi
+ tors,org.eclipse.ui.workbench.texteditor,org.eclipse.core.resources,o
+ rg.eclipse.core.variables,org.eclipse.debug.core,org.eclipse.debug.ui
+ ,org.python.pydev.debug,org.eclipse.ui.console,org.python.pydev.jytho
+ n,org.eclipse.search,org.eclipse.ui.ide,com.aptana.interactive_consol
+ e
+Export-Package: com.python.pydev,com.python.pydev.actions,com.python.p
+ ydev.refactoring,com.python.pydev.ui.hierarchy,com.python.pydev.ui.se
+ arch,com.python.pydev.util
+Bundle-Vendor: Aptana
+Eclipse-LazyStart: true
+Bundle-ClassPath: pydev.jar
+Bundle-Version: 2.7.0.2013032300
+Bundle-Name: Pydev Extensions
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.python.pydev.PydevPlugin
+Bundle-SymbolicName: com.python.pydev; singleton:=true
+
+Name: LICENSE.TXT
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: 6mDW8kS/T9pK7w1by/wcxy21Z20=
+
+Name: icons/searchm_obj.gif
+SHA1-Digest: kCLmGfhNk3E8XFQCF5umAga+HXU=
+
+Name: plugin.xml
+SHA1-Digest: Z/ZcYWB1KOur9xsSoa92ME1Oh9M=
+
+Name: pydev.jar
+SHA1-Digest: cbxFiBB/0qNU3n3JorO131IqdPI=
+
+Name: plugin.properties
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: icons/python_file.gif
+SHA1-Digest: gTRixD8CyMaKVlNh1AusW9SNog4=
+
+Name: icons/class_hi.gif
+SHA1-Digest: vYgFu3TSq5m9t5d1POqGcLSLpAg=
+

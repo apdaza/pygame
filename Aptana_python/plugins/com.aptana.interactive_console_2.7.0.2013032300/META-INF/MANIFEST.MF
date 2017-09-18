@@ -1,0 +1,65 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jf
+ ace.text,org.eclipse.ui.console,org.eclipse.debug.core,org.eclipse.de
+ bug.ui,org.eclipse.ui.workbench.texteditor,com.aptana.shared_core,org
+ .eclipse.ui.ide
+Export-Package: com.aptana.interactive_console,com.aptana.interactive_
+ console.console,com.aptana.interactive_console.console.codegen,com.ap
+ tana.interactive_console.console.ui,com.aptana.interactive_console.co
+ nsole.ui.internal,com.aptana.interactive_console.console.ui.internal.
+ actions,com.aptana.interactive_console.console.ui.internal.fromeclips
+ e,org.apache.commons.logging,org.apache.commons.logging.impl,org.apac
+ he.ws.commons.serialize,org.apache.ws.commons.util,org.apache.xmlrpc,
+ org.apache.xmlrpc.client,org.apache.xmlrpc.client.util,org.apache.xml
+ rpc.common,org.apache.xmlrpc.jaxb,org.apache.xmlrpc.metadata,org.apac
+ he.xmlrpc.parser,org.apache.xmlrpc.serializer,org.apache.xmlrpc.serve
+ r,org.apache.xmlrpc.util,org.apache.xmlrpc.webserver
+Bundle-Vendor: Appcelerator
+Eclipse-LazyStart: true
+Bundle-ClassPath: interactive_console.jar,commons-logging-1.1.jar,ws-c
+ ommons-util-1.0.2.jar,xmlrpc-client-3.1.jar,xmlrpc-common-3.1.jar,xml
+ rpc-server-3.1.jar
+Bundle-Version: 2.7.0.2013032300
+Bundle-Name: Interactive Console Plug-in
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.aptana.interactive_console.InteractiveConsolePlu
+ gin
+Bundle-SymbolicName: com.aptana.interactive_console; singleton:=true
+
+Name: xmlrpc-server-3.1.jar
+SHA1-Digest: 6Z1PUK2SDU7qvJy1y0cSOcy+uN8=
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: icons/sync_ed.gif
+SHA1-Digest: Ghj9SQaJ6vJj8hRCpmwiAfHF1uI=
+
+Name: ws-commons-util-1.0.2.jar
+SHA1-Digest: D3VvkBw84FpNjQZQoWA34/eENIs=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: 6mDW8kS/T9pK7w1by/wcxy21Z20=
+
+Name: commons-logging-1.1.jar
+SHA1-Digest: FSawMPrbGrozg29gKeaiLyHrRc0=
+
+Name: icons/terminate.gif
+SHA1-Digest: kqo+0YlPPDIPH/JIX/czNHDae7Q=
+
+Name: plugin.xml
+SHA1-Digest: vhsqsw4pEKXDdiqIkEMLkjjE6XY=
+
+Name: icons/save.gif
+SHA1-Digest: 4fl7ShbxVcq60UhHKDRDMSPO8Rw=
+
+Name: xmlrpc-client-3.1.jar
+SHA1-Digest: h3hadnQunMX4/tQOo352JCgwzWQ=
+
+Name: xmlrpc-common-3.1.jar
+SHA1-Digest: 4DBQfitVWkhZ309X9B4au4pD7jQ=
+
+Name: interactive_console.jar
+SHA1-Digest: C847eKwHKVE2qXLRDhpwCnAMkr4=
+

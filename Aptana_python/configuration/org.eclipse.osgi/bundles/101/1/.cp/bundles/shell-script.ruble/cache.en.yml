@@ -1,0 +1,314 @@
+--- !ruby/object:Ruble::Bundle
+displayName: ! "Shell Script"
+path: bundle.rb
+children:
+- !ruby/object:Ruble::Menu
+  displayName: ! "Shell Script"
+  path: bundle.rb
+  children:
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Run Script"
+    path: bundle.rb
+    commandName: ! "Run Script"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Make Script Executable"
+    path: bundle.rb
+    commandName: ! "Make Script Executable"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Open Terminal"
+    path: bundle.rb
+    commandName: ! "Open Terminal"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Documentation for Word / Selection"
+    path: bundle.rb
+    commandName: ! "Documentation for Word / Selection"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "New Function"
+    path: bundle.rb
+    commandName: ! "New Function"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Here Document"
+    path: bundle.rb
+    commandName: ! "Here Document"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '#!/usr/bin/env'
+    path: bundle.rb
+    commandName: ! '#!/usr/bin/env'
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Tests"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: if ... fi
+      path: bundle.rb
+      commandName: if ... fi
+    - !ruby/object:Ruble::Menu
+      displayName: elif ...
+      path: bundle.rb
+      commandName: elif ...
+    - !ruby/object:Ruble::Menu
+      displayName: case ... esac
+      path: bundle.rb
+      commandName: case ... esac
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Loops"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: for ... done
+      path: bundle.rb
+      commandName: for ... done
+    - !ruby/object:Ruble::Menu
+      displayName: for ... in ... done
+      path: bundle.rb
+      commandName: for ... in ... done
+    - !ruby/object:Ruble::Menu
+      displayName: while ... done
+      path: bundle.rb
+      commandName: while ... done
+    - !ruby/object:Ruble::Menu
+      displayName: until ... done
+      path: bundle.rb
+      commandName: until ... done
+- !ruby/object:Ruble::Command
+  displayName: ! "Toggle Backticks"
+  path: commands/toggle_backticks.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - scope
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M2+M4+'
+  scope: source.shell
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Run Script"
+  path: commands/execute_current_file_in_window.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+R
+  scope: source.shell
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! "New Function"
+  path: commands/new_function.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - word
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M2+ENTER
+  scope: source.shell
+  outputType: insert_as_snippet
+  customProperties:
+    prefix_values:
+    - fun
+- !ruby/object:Ruble::Command
+  displayName: ! "Documentation for Word / Selection"
+  path: commands/man.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - word
+  outputType: show_as_tooltip
+- !ruby/object:Ruble::Command
+  displayName: ! "Make Script Executable"
+  path: commands/make_current_file_executable.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+M2+M4+X
+  outputType: show_as_tooltip
+- !ruby/object:Ruble::Command
+  displayName: ! "Open Terminal"
+  path: commands/open_directory_in_terminal.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M2+M4+O
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! '#!/usr/bin/env'
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: insert_as_snippet
+  customProperties:
+    prefix_values:
+    - ! '!env'
+- !ruby/object:Ruble::Snippet
+  displayName: case ... esac
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.shell
+  customProperties:
+    prefix_values:
+    - case
+  expansion: ! "case ${1:word} in\n\t${2:pattern} )\n\t\t$0;;\nesac"
+- !ruby/object:Ruble::Snippet
+  displayName: elif ...
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.shell
+  customProperties:
+    prefix_values:
+    - elif
+  expansion: ! "elif [[ ${1:condition} ]]; then\n\t${0:#statements}"
+- !ruby/object:Ruble::Snippet
+  displayName: for ... done
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.shell
+  customProperties:
+    prefix_values:
+    - for
+  expansion: ! "for (( i = 0; i < ${1:10}; i++ )); do\n\t${0:#statements}\ndone"
+- !ruby/object:Ruble::Snippet
+  displayName: for ... in ... done
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.shell
+  customProperties:
+    prefix_values:
+    - forin
+  expansion: ! "for ${1:i} in ${2:words}; do\n\t${0:#statements}\ndone"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Here Document"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.shell
+  customProperties:
+    prefix_values:
+    - here
+  expansion: ! "<<-'${1:TOKEN}'\n\t$0\n${1}"
+- !ruby/object:Ruble::Snippet
+  displayName: if ... fi
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.shell
+  customProperties:
+    prefix_values:
+    - if
+  expansion: ! "if [[ ${1:condition} ]]; then\n\t${0:#statements}\nfi"
+- !ruby/object:Ruble::Snippet
+  displayName: until ... done
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.shell
+  customProperties:
+    prefix_values:
+    - until
+  expansion: ! "until [[ ${1:condition} ]]; do\n\t${0:#statements}\ndone"
+- !ruby/object:Ruble::Snippet
+  displayName: while ... done
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.shell
+  customProperties:
+    prefix_values:
+    - while
+  expansion: ! "while [[ ${1:condition} ]]; do\n\t${0:#statements}\ndone"
+- !ruby/object:Ruble::Env
+  scope: source.shell
+  path: bundle.rb
+  displayName: environment-
+visible: true
+author: Martin Kuehl
+customProperties:
+  contact_email_rot_13: znegva.xhruy@tznvy.pbz
+  fileTypes:
+  - ! '*.sh'
+  - ! '*.ss'
+  - ! '*.bashrc'
+  - ! '*.bash_profile'
+  - ! '*.bash_login'
+  - ! '*.profile'
+  - ! '*.bash_logout'
+  - .textmate_init
+  fileTypeRegistry:
+    ! '*.sh': source.shell
+    ! '*.ss': source.shell
+    ! '*.bashrc': source.shell
+    ! '*.bash_profile': source.shell
+    ! '*.bash_login': source.shell
+    ! '*.profile': source.shell
+    ! '*.bash_logout': source.shell
+    .textmate_init: source.shell
+repository: git://github.com/aptana/shell-script.ruble.git
+description: Support for running and editing shell scripts (using the bash dialect).
+increaseIndentMarkers:
+  source.shell: !regexp /^\s*(if|elif|else|case)\b|^.*(\{|\b(do)\b)$/
+decreaseIndentMarkers:
+  source.shell: !regexp /^\s*(\}|(elif|else|fi|esac|done)\b)/
+foldingStartMarkers:
+  source.shell: !regexp /\b(if|case)\b|(\{|\b(do)\b)$/
+foldingStopMarkers:
+  source.shell: !regexp /^\s*(\}|(done|fi|esac)\b)/

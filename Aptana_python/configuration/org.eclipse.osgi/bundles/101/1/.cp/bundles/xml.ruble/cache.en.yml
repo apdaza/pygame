@@ -1,0 +1,194 @@
+--- !ruby/object:Ruble::Bundle
+displayName: ! "XML"
+path: bundle.rb
+children:
+- !ruby/object:Ruble::Menu
+  displayName: ! "XML"
+  path: bundle.rb
+  children:
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Validate Syntax"
+    path: bundle.rb
+    commandName: ! "Validate Syntax"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Tidy"
+    path: bundle.rb
+    commandName: ! "Tidy"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Create XSL Generator for Selection"
+    path: bundle.rb
+    commandName: ! "Create XSL Generator for Selection"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Long Tag"
+    path: bundle.rb
+    commandName: ! "Long Tag"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Long Attribute Tag"
+    path: bundle.rb
+    commandName: ! "Long Attribute Tag"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Short Tag"
+    path: bundle.rb
+    commandName: ! "Short Tag"
+- !ruby/object:Ruble::SmartTypingPair
+  scope: text.xml
+  path: bundle.rb
+  pairs:
+  - <
+  - ! '>'
+  displayName: smart_typing_pairs-
+- !ruby/object:Ruble::SmartTypingPair
+  scope: text.xml meta.tag - punctuation.definition.tag.begin
+  path: bundle.rb
+  pairs:
+  - ! '"'
+  - ! '"'
+  - ! ''''
+  - ! ''''
+  displayName: smart_typing_pairs-
+- !ruby/object:Ruble::Command
+  displayName: ! "Tidy"
+  path: commands/tidy_xml.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+H
+  scope: text.xml
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Validate Syntax"
+  path: commands/xmllint.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - document
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+V
+  scope: text.xml
+  outputType: show_as_html
+- !ruby/object:Ruble::Command
+  displayName: ! "Create XSL Generator for Selection"
+  path: commands/create_xsl_generator_for_selection.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  scope: text.xml
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Long Attribute Tag"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: text.xml
+  outputType: insert_as_snippet
+  customProperties:
+    prefix_values:
+    - <a
+- !ruby/object:Ruble::Command
+  displayName: ! "Long Tag"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: text.xml
+  outputType: insert_as_snippet
+  customProperties:
+    prefix_values:
+    - <
+- !ruby/object:Ruble::Command
+  displayName: ! "XML Processing Instruction"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: text.xml
+  outputType: insert_as_snippet
+  customProperties:
+    prefix_values:
+    - <?xml
+- !ruby/object:Ruble::Snippet
+  displayName: CDATA
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: text.xml
+  customProperties:
+    prefix_values:
+    - cdata
+  expansion: <![CDATA[$0]]>
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Short Tag"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: text.xml
+  customProperties:
+    prefix_values:
+    - ! '>'
+  expansion: <${1:name} />
+- !ruby/object:Ruble::Env
+  scope: text.xml
+  path: bundle.rb
+  displayName: environment-
+- !ruby/object:Ruble::Template
+  displayName: XML Template
+  path: templates/templates.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  filetype: ! '*.xml'
+- !ruby/object:Ruble::Template
+  displayName: XSLT Template
+  path: templates/templates.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  filetype: ! '*.xsl'
+visible: true
+author: Christopher Williams
+copyright: Copyright 2012 Aptana Inc. Distributed under the MIT license.
+description: A port of the TextMate bundle that provides support for the <a href="http://www.w3.org/XML/">eXtensible
+  Markup Language</a>.
+repository: git://github.com/aptana/xml.ruble.git
+increaseIndentMarkers:
+  text.xml: !regexp /^\s*<(([^!\/?]|%)(?!.+?([\/%]>|<\/.+?>))|[%!]--\s*$)/
+decreaseIndentMarkers:
+  text.xml: !regexp /^\s*(<\/[^>]+>|-->|--%>)/
+customProperties:
+  fileTypes:
+  - ! '*.xsl'
+  - ! '*.xslt'
+  fileTypeRegistry:
+    ! '*.xsl': text.xml.xsl
+    ! '*.xslt': text.xml.xsl

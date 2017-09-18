@@ -1,0 +1,10 @@
+INSTUPbola
+/home/apdaza/Escritorio/pygame/Aptana_python/workspace/prueba1/base/bola.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|7|2|0&&3|7|2|0
+screen=5
+ball=6
+speed=3
+bola=2
+ballrect=7
+black=4
+size=1

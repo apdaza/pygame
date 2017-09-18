@@ -1,0 +1,385 @@
+--- !ruby/object:Ruble::Bundle
+displayName: ! "JavaScript"
+path: bundle.rb
+children:
+- !ruby/object:Ruble::Menu
+  displayName: ! "JavaScript"
+  path: bundle.rb
+  scope: source.js
+  children:
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Core"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Control"
+      path: bundle.rb
+      children:
+      - !ruby/object:Ruble::Menu
+        displayName: ! "if"
+        path: bundle.rb
+        commandName: ! "if"
+      - !ruby/object:Ruble::Menu
+        displayName: ! "if ... else"
+        path: bundle.rb
+        commandName: ! "if ... else"
+      - !ruby/object:Ruble::Menu
+        displayName: ! '-'
+        path: bundle.rb
+        commandName: ! '-'
+      - !ruby/object:Ruble::Menu
+        displayName: ! "for (...) {...}"
+        path: bundle.rb
+        commandName: ! "for (...) {...}"
+      - !ruby/object:Ruble::Menu
+        displayName: ! "for (...) {...} (Improved Native For-Loop)"
+        path: bundle.rb
+        commandName: ! "for (...) {...} (Improved Native For-Loop)"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Language"
+      path: bundle.rb
+      children:
+      - !ruby/object:Ruble::Menu
+        displayName: ! "Object key - key: \"value\""
+        path: bundle.rb
+        commandName: ! "Object key - key: \"value\""
+      - !ruby/object:Ruble::Menu
+        displayName: ! "Object Value JS"
+        path: bundle.rb
+        commandName: ! "Object Value JS"
+      - !ruby/object:Ruble::Menu
+        displayName: ! '-'
+        path: bundle.rb
+        commandName: ! '-'
+      - !ruby/object:Ruble::Menu
+        displayName: ! "Prototype"
+        path: bundle.rb
+        commandName: ! "Prototype"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Function"
+      path: bundle.rb
+      children:
+      - !ruby/object:Ruble::Menu
+        displayName: ! "Anonymous Function"
+        path: bundle.rb
+        commandName: ! "Anonymous Function"
+      - !ruby/object:Ruble::Menu
+        displayName: ! "Function"
+        path: bundle.rb
+        commandName: ! "Function"
+      - !ruby/object:Ruble::Menu
+        displayName: ! '-'
+        path: bundle.rb
+        commandName: ! '-'
+      - !ruby/object:Ruble::Menu
+        displayName: ! "New Function"
+        path: bundle.rb
+        commandName: ! "New Function"
+      - !ruby/object:Ruble::Menu
+        displayName: ! "New Method"
+        path: bundle.rb
+        commandName: ! "New Method"
+      - !ruby/object:Ruble::Menu
+        displayName: ! '-'
+        path: bundle.rb
+        commandName: ! '-'
+      - !ruby/object:Ruble::Menu
+        displayName: ! "Object Method"
+        path: bundle.rb
+        commandName: ! "Object Method"
+      - !ruby/object:Ruble::Menu
+        displayName: ! "Object Method String"
+        path: bundle.rb
+        commandName: ! "Object Method String"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "BOM"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "setTimeout function"
+      path: bundle.rb
+      commandName: ! "setTimeout function"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Documentation for Word"
+    path: bundle.rb
+    commandName: ! "Documentation for Word"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Copy as Bookmarklet to Clipboard"
+    path: bundle.rb
+    commandName: ! "Copy as Bookmarklet to Clipboard"
+- !ruby/object:Ruble::SmartTypingPair
+  scope: source.js
+  path: bundle.rb
+  pairs:
+  - ! '"'
+  - ! '"'
+  - (
+  - )
+  - ! '{'
+  - ! '}'
+  - ! '['
+  - ! ']'
+  - ! ''''
+  - ! ''''
+  displayName: smart_typing_pairs-
+- !ruby/object:Ruble::Command
+  displayName: ! "Documentation for Word"
+  path: commands/documentation_for_word.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  outputType: show_as_html
+  scope: source.js
+- !ruby/object:Ruble::Command
+  displayName: ! "Copy as Bookmarklet to Clipboard"
+  path: commands/copy_as_bookmarklet_to_clipboard.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  outputType: copy_to_clipboard
+  scope: source.js
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CTRL+SHIFT+H
+- !ruby/object:Ruble::Command
+  displayName: ! "Reformat Document"
+  path: commands/format.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  outputType: replace_selection
+  scope: source.js
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CTRL+SHIFT+H
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Object Method"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - ':f'
+  expansion: ! "${1:method_name}: function(${2:attribute}){\n  $0\n}${3:,}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Function"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - fun
+  expansion: ! "function ${1:function_name} (${2:argument}) {\n  ${0:// body...}\n}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "New Function"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - fun
+  expansion: ! "function (${1:args}) {\n  ${0:// body...}\n}"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "New Method"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - ! ':'
+  expansion: ": function (${1:args}) {\n    $0\n},"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Prototype"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - proto
+  expansion: ! "${1:class_name}.prototype.${2:method_name} = function(${3:first_argument})
+    {\n  ${0:// body...}\n};\n"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Anonymous Function"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - f
+  expansion: function($1) {${0:$TM_SELECTED_TEXT}};
+- !ruby/object:Ruble::Snippet
+  displayName: ! "if"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - if
+  expansion: if (${1:true}) {${0:$TM_SELECTED_TEXT}};
+- !ruby/object:Ruble::Snippet
+  displayName: ! "if ... else"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - ife
+  expansion: if (${1:true}) {${0:$TM_SELECTED_TEXT}} else{};
+- !ruby/object:Ruble::Snippet
+  displayName: ! "for (...) {...}"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - for
+  expansion: ! "for (var ${2:i}=0; ${2:i} < ${1:Things}.length; ${2:i}++) {\n  ${1:Things}[${2:i}]\n};"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "for (...) {...} (Improved Native For-Loop)"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - for
+  expansion: ! "for (var ${2:i} = ${1:Things}.length - 1; ${2:i} >= 0; ${2:i}--){\n
+    \ ${1:Things}[${2:i}]\n};"
+- !ruby/object:Ruble::Snippet
+  displayName: for (...) {...} (High-Performance For-Loop)
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - for
+  expansion: ! "for(var ${2:i}=0,${3:j}=${1:Things}.length; ${2:i}<${3:j}; ${2:i}++){\n
+    \ ${1:Things}[${2:i}]\n};"
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Object Value JS"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - ':,'
+  expansion: ${1:value_name}:${0:value},
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Object key - key: \"value\""
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - ! ':'
+  expansion: ! '${1:key}: ${2:"${3:value}"}${4:, }'
+- !ruby/object:Ruble::Snippet
+  displayName: ! "setTimeout function"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - timeout
+  expansion: setTimeout(function() {$0}, ${1:10});
+- !ruby/object:Ruble::Snippet
+  displayName: ! "Object Method String"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  scope: source.js
+  customProperties:
+    prefix_values:
+    - ! '":f'
+  expansion: ! "'${1:${2:#thing}:${3:click}}': function(element){\n  $0\n}${4:,}"
+- !ruby/object:Ruble::Env
+  scope: source.js
+  path: bundle.rb
+  displayName: environment-
+- !ruby/object:Ruble::Template
+  displayName: JavaScript Template
+  path: templates/templates.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  filetype: ! '*.js'
+visible: true
+author: Christopher Williams
+copyright: Copyright 2010 Aptana Inc. Distributed under the MIT license.
+description: Javascript bundle for RadRails, ported from the TextMate bundle
+repository: git://github.com/aptana/js.ruble.git
+increaseIndentMarkers:
+  source.js: !regexp /^.*(\{[^}"'']*|\([^)"'']*)$/
+decreaseIndentMarkers:
+  source.js: !regexp /^(.*\*\/)?\s*(\}|\))([^{]*\{)?([;,]?\s*|\.[^{]*|\s*\)[;\s]*)$/

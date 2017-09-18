@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.ui
+ .workbench.texteditor,org.eclipse.jface.text
+Export-Package: com.aptana.shared_core,com.aptana.shared_core.bindings
+ ,com.aptana.shared_core.cache,com.aptana.shared_core.callbacks,com.ap
+ tana.shared_core.io,com.aptana.shared_core.log,com.aptana.shared_core
+ .net,com.aptana.shared_core.string,com.aptana.shared_core.structure,c
+ om.aptana.shared_core.utils
+Bundle-Vendor: Appcelerator
+Eclipse-LazyStart: true
+Bundle-ClassPath: shared_core.jar
+Bundle-Version: 2.7.0.2013032300
+Bundle-Name: Shared Core Plug-in
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.aptana.shared_core.SharedCorePlugin
+Bundle-SymbolicName: com.aptana.shared_core; singleton:=true
+
+Name: shared_core.jar
+SHA1-Digest: myBBnjNJEbraQ0Us24gt/i8bHDs=
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: 6mDW8kS/T9pK7w1by/wcxy21Z20=
+
+Name: plugin.xml
+SHA1-Digest: vhsqsw4pEKXDdiqIkEMLkjjE6XY=
+

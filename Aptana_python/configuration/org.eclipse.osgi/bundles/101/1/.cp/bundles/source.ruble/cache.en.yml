@@ -1,0 +1,516 @@
+--- !ruby/object:Ruble::Bundle
+displayName: ! "Source"
+path: bundle.rb
+children:
+- !ruby/object:Ruble::Menu
+  displayName: ! "Source"
+  path: bundle.rb
+  children:
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Folding"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Toggle Foldings at Level"
+      path: bundle.rb
+      children:
+      - !ruby/object:Ruble::Menu
+        displayName: ! "All Levels"
+        path: bundle.rb
+        commandName: ! "All Levels"
+      - !ruby/object:Ruble::Menu
+        displayName: '1'
+        path: bundle.rb
+        commandName: '1'
+      - !ruby/object:Ruble::Menu
+        displayName: '2'
+        path: bundle.rb
+        commandName: '2'
+      - !ruby/object:Ruble::Menu
+        displayName: '3'
+        path: bundle.rb
+        commandName: '3'
+      - !ruby/object:Ruble::Menu
+        displayName: '4'
+        path: bundle.rb
+        commandName: '4'
+      - !ruby/object:Ruble::Menu
+        displayName: '5'
+        path: bundle.rb
+        commandName: '5'
+      - !ruby/object:Ruble::Menu
+        displayName: '6'
+        path: bundle.rb
+        commandName: '6'
+      - !ruby/object:Ruble::Menu
+        displayName: '7'
+        path: bundle.rb
+        commandName: '7'
+      - !ruby/object:Ruble::Menu
+        displayName: '8'
+        path: bundle.rb
+        commandName: '8'
+      - !ruby/object:Ruble::Menu
+        displayName: '9'
+        path: bundle.rb
+        commandName: '9'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Comments"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Comment Line / Selection"
+      path: bundle.rb
+      commandName: ! "Comment Line / Selection"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Insert Block Comment"
+      path: bundle.rb
+      commandName: ! "Insert Block Comment"
+    - !ruby/object:Ruble::Menu
+      displayName: ! '-'
+      path: bundle.rb
+      commandName: ! '-'
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Insert Comment Banner"
+      path: bundle.rb
+      commandName: ! "Insert Comment Banner"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Insert Comment Header"
+      path: bundle.rb
+      commandName: ! "Insert Comment Header"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Reformat Comment"
+      path: bundle.rb
+      commandName: ! "Reformat Comment"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Insert Escaped"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Single Quotes - \\'...\\'"
+      path: bundle.rb
+      commandName: ! "Single Quotes - \\'...\\'"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Double Quotes - \\\"...\\\""
+      path: bundle.rb
+      commandName: ! "Double Quotes - \\\"...\\\""
+    - !ruby/object:Ruble::Menu
+      displayName: ! "Newline - \\n"
+      path: bundle.rb
+      commandName: ! "Newline - \\n"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Toggle Single / Double String Quotes"
+    path: bundle.rb
+    commandName: ! "Toggle Single / Double String Quotes"
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Toggle camelCase / snake_case / PascalCase"
+    path: bundle.rb
+    commandName: ! "Toggle camelCase / snake_case / PascalCase"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Move to EOL"
+    path: bundle.rb
+    children:
+    - !ruby/object:Ruble::Menu
+      displayName: ! "and Insert LF"
+      path: bundle.rb
+      commandName: ! "and Insert LF"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "and Insert Terminator"
+      path: bundle.rb
+      commandName: ! "and Insert Terminator"
+    - !ruby/object:Ruble::Menu
+      displayName: ! "and Insert Terminator + LF"
+      path: bundle.rb
+      commandName: ! "and Insert Terminator + LF"
+  - !ruby/object:Ruble::Menu
+    displayName: ! '-'
+    path: bundle.rb
+    commandName: ! '-'
+  - !ruby/object:Ruble::Menu
+    displayName: ! "Align Assignments"
+    path: bundle.rb
+    commandName: ! "Align Assignments"
+- !ruby/object:Ruble::SmartTypingPair
+  scope: source
+  path: bundle.rb
+  pairs:
+  - ! '"'
+  - ! '"'
+  - (
+  - )
+  - ! '{'
+  - ! '}'
+  - ! '['
+  - ! ']'
+  - ! ''''
+  - ! ''''
+  - ! '`'
+  - ! '`'
+  displayName: smart_typing_pairs-
+- !ruby/object:Ruble::SmartTypingPair
+  scope: string.quoted.double, comment
+  path: bundle.rb
+  pairs:
+  - ! '"'
+  - ! '"'
+  - (
+  - )
+  - ! '{'
+  - ! '}'
+  - ! '['
+  - ! ']'
+  displayName: smart_typing_pairs-
+- !ruby/object:Ruble::Command
+  displayName: ! "and Insert Terminator"
+  path: commands/move_to_eol_and_insert_terminator.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - line
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+M3+ENTER
+  scope: source
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "Insert Comment Header"
+  path: commands/insert_source_header.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  outputType: insert_as_snippet
+  customProperties:
+    prefix_values:
+    - head
+- !ruby/object:Ruble::Command
+  displayName: ! "Toggle Single / Double String Quotes"
+  path: commands/toggle_single_double_string_quotes.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - scope
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+'
+  scope: string.quoted.single, string.quoted.double
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "and Insert Terminator + LF"
+  path: commands/move_to_eol_and_insert_terminator_and_lf.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - line
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+M2+ENTER
+  scope: source
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! "Toggle camelCase / snake_case / PascalCase"
+  path: commands/toggle_camelcase_vs_underscore.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - word
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+M2+-
+  scope: source
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Convert Spaces to Tabs (Estimating Indent)"
+  path: commands/tabify.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - document
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+SHIFT+COMMAND+T
+  outputType: replace_document
+- !ruby/object:Ruble::Command
+  displayName: ! "Align Assignments"
+  path: commands/align_assignments.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - document
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+]
+  outputType: replace_selection
+- !ruby/object:Ruble::Command
+  displayName: ! "Comment Line / Selection"
+  path: commands/toggle_comment.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - line
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+/
+    - M1+7
+    - M1+M2+C
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! "and Insert LF"
+  path: commands/move_to_eol_and_insert_lf.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - line
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+ENTER
+  scope: source
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! "Insert Block Comment"
+  path: commands/insert_block_comment.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - M1+M2+/
+    !ruby/object:Ruble::Platform MAC:
+    - M1+M3+/
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "All Levels"
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '1'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+1
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '2'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+2
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '3'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+3
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '4'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+4
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '5'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+5
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '6'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+6
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '7'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+7
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '8'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+8
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: '9'
+  path: commands/folding.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+0
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+9
+  outputType: discard
+- !ruby/object:Ruble::Command
+  displayName: ! "Reformat Comment"
+  path: commands/reformat_comment.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - selection
+  - scope
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+Q
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "Newline - \\n"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+ENTER
+  scope: source
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "Double Quotes - \\\"...\\\""
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+'
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "Single Quotes - \\'...\\'"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - OPTION+COMMAND+'
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Command
+  displayName: ! "Insert Comment Banner"
+  path: snippets/snippets.rb
+  runType: current_thread
+  workingDirectoryType: UNDEFINED
+  async: false
+  input:
+  - none
+  keyBindingMap:
+    !ruby/object:Ruble::Platform ALL:
+    - CONTROL+SHIFT+B
+  outputType: insert_as_snippet
+- !ruby/object:Ruble::Env
+  scope: source
+  path: bundle.rb
+  displayName: environment-
+visible: true
+author: Christopher Williams
+copyright: Copyright 2011 Appcelerator Inc. Distributed under the MIT license.
+description: A port of the TextMate bundle. Miscellaneous support for working with
+  source code. This bundle is essential, e.g. it allows you to toggle comments on
+  ?/.
+repository: git://github.com/aptana/source.ruble.git
